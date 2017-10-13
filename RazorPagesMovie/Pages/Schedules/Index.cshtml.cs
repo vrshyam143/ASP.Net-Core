@@ -30,8 +30,7 @@ namespace RazorPagesMovie.Pages.Schedules
 
         public async Task<IActionResult> OnPostAsync()
         {
-            // Perform an initial check to catch FileUpload class
-            // attribute violations.
+            // Perform an initial check to catch FileUpload class attribute violations.
             if (!ModelState.IsValid)
             {
                 Schedule = await _context.Schedule.AsNoTracking().ToListAsync();
@@ -44,8 +43,7 @@ namespace RazorPagesMovie.Pages.Schedules
             var privateScheduleData =
                 await FileHelper.ProcessFormFile(FileUpload.UploadPrivateSchedule, ModelState);
 
-            // Perform a second check to catch ProcessFormFile method
-            // violations.
+            // Perform a second check to catch ProcessFormFile method violations.
             if (!ModelState.IsValid)
             {
                 Schedule = await _context.Schedule.AsNoTracking().ToListAsync();
